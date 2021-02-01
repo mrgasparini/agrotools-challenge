@@ -1,0 +1,46 @@
+<div class="mainContainer">
+    <form [formGroup]="quizForm" class="quizForm" (ngSubmit)="onSubmit()">
+
+        <mat-form-field color="warn" class="quizNameField">
+            <mat-label class="nameLabel">Nome do questionário:</mat-label>
+            <input formControlName="name" matInput placeholder="" value="" required>
+            <mat-error>{{getErrorMessage(quizForm.controls.name, 'quizName')}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field color="warn" class="quizDescriptionField">
+            <mat-label class="descriptionLabel">Descrição:</mat-label>
+            <input formControlName="description" matInput placeholder="" value="">
+        </mat-form-field>
+
+        <h2>Adicione perguntas</h2>
+        <table formArrayName="questions">
+            <tr *ngFor="let question of questions().controls; let i=index" [formGroupName]="i">
+                <mat-form-field class="formField" appearance="fill">
+                    <mat-label>Pergunta</mat-label>
+                    <input matInput formControlName="questionName" placeholder="" required>
+                    <mat-error>{{getErrorMessage(question, 'questionName')}}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="formField" appearance="fill">
+                    <mat-label>Campo Obrigatório</mat-label>
+                    <mat-select formControlName="mandatoryField">
+                        <mat-option value=true>Sim</mat-option>
+                        <mat-option value=false>Não</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div class="rowButtons">
+                    <button (click)="removeQuantity(i)" mat-mini-fab class="removeButton"
+                        [disabled]="questions().controls.length === 1">
+                        <mat-icon><img src="https://img.icons8.com/android/24/ffffff/trash.png" /></mat-icon>
+                    </button>
+                    <button *ngIf="i === questions().controls.length - 1" class="plusButton" mat-mini-fab
+                        color="primary" (click)="addQuantity()">
+                        <mat-icon><img src="https://img.icons8.com/android/24/ffffff/plus.png" /></mat-icon>
+                    </button>
+                </div>
+            </tr>
+        </table>
+
+        <button type="submit" class="submitButton" mat-raised-button color="primary">Salvar</button>
+
+    </form>
+</div>

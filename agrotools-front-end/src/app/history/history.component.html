@@ -1,0 +1,24 @@
+<div class="mainContainer">
+    <table *ngIf="dataSource.filteredData.length > 0" mat-table [dataSource]="dataSource">
+        <!-- Position Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Nome </th>
+            <td mat-cell *matCellDef="let element"> {{element.quizName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Opções </th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-mini-fab color="link" (click)='viewResume(element.id)'>
+                    <mat-icon><img src="https://img.icons8.com/pastel-glyph/64/000000/list.png" /></mat-icon>
+                </button>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <div *ngIf="dataSource.filteredData.length < 1">
+        <h2> Ops... Não encontramos nenhum questionário</h2>
+        <img class="errorImg" src="https://cdn.dicionariopopular.com/imagens/giphy-1.gif">
+    </div>
+</div>

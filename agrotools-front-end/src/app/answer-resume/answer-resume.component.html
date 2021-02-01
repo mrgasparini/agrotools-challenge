@@ -1,0 +1,16 @@
+<div class="mainContainer">
+
+    <h2>{{answer.quizName}}</h2>
+
+    <h3>Perguntas:</h3>
+
+    <div class="questionsContainer">
+        <div *ngFor="let question of answer.questions" class="">
+            <div class="answerTitle">{{question.questionName}}:</div>
+            <div class="answerValue">
+                {{question.questionValue}}</div>
+        </div>
+    </div>
+    <button class="return-button" mat-raised-button (click)="returnToHistory()">Voltar</button>
+
+</div>

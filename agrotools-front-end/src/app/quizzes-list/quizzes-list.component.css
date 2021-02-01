@@ -1,0 +1,46 @@
+table{
+    margin: auto;
+    padding-bottom: 10px;
+    width: 95%;
+}
+
+th{
+    font-weight: bold;
+    font-size: 15px;
+}
+.mainContainer{
+    padding: 20px;
+    top: 20px;
+    width: 85%;
+    margin: auto;
+    margin-top: 30px;
+    border: 1px solid #0a0a0a14;
+    border-radius: 15px;
+    background-color: #fff;
+}
+
+.mat-column-actions{
+    width: 10%;
+}
+
+.mat-column-name{
+    width: 40%;
+}
+
+img{
+    width: 18px;
+    margin-bottom: 8px;
+}
+
+.mat-mini-fab {
+    margin-left: 10px;
+    width: 35px;
+    height: 35px;
+}
+.errorImg{
+    width: 100%;
+}
+h2{
+    font-weight: bold;
+    text-align: center;
+}

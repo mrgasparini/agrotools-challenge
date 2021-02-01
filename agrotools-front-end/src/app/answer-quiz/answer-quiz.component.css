@@ -1,0 +1,34 @@
+.mainContainer{
+    padding: 20px 40px;
+    top: 20px;
+    width: 85%;
+    margin: auto;
+    margin-top: 30px;
+    border: 1px solid #0a0a0a14;
+    border-radius: 15px;
+    background-color: #fff;
+}
+
+h2{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.formField{
+    width: 45%;
+    margin: 20px 20px;
+}
+
+.questionsContainer{
+    margin: auto;
+}
+
+.submitButton{
+    display: block;
+    margin: auto;
+}
+.subtitles{
+    margin-top: 10px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.54);
+}

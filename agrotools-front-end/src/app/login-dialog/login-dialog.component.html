@@ -1,0 +1,23 @@
+<div class="center-content">
+    <mat-card class="login-card">
+        <mat-card-header>
+            <h1 class="header-title">Login</h1>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-form-field class="input-full-width">
+                <mat-label>Username</mat-label>
+                <input type="username" matInput placeholder="Username" value="" [(ngModel)]="username">
+                <mat-icon matSuffix>account_box</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field class="input-full-width">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput placeholder="Password" [(ngModel)]="password">
+                <mat-icon matSuffix>vpn_key</mat-icon>
+            </mat-form-field>
+            <button mat-button color="primary" (click)="doLogin()">Login</button>
+
+        </mat-card-content>
+
+    </mat-card>
+</div>
